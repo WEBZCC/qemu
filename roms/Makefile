@@ -193,7 +193,7 @@ opensbi64-generic:
 	cp opensbi/build/platform/generic/firmware/fw_dynamic.elf ../pc-bios/opensbi-riscv64-generic-fw_dynamic.elf
 
 bios-microvm:
-	$(MAKE) -C qboot
+	$(MAKE) -C qboot CROSS_COMPILE=$(x86_64_cross_prefix) CC=gcc
 	cp qboot/bios.bin ../pc-bios/bios-microvm.bin
 
 clean:
